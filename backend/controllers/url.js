@@ -15,7 +15,7 @@ async function handleGenerateUrl(req, res) {
 
   return res.json({
     id: shortId,
-    shortUrl: `${req.protocol}://${req.get("host")}/${shortId}`,
+    shortUrl: `${process.env.BASE_URL}/${shortId}`,
   });
 }
 
