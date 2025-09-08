@@ -5,6 +5,8 @@ function Hero({ onGenerate }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const API_BASE = import.meta.env.VITE_API_URL;
+
   const handleGenerate = async () => {
     if (!longUrl.trim()) {
       setError(true);
@@ -14,7 +16,7 @@ function Hero({ onGenerate }) {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8001/url", {
+      const res = await fetch(`${API_BASE}/url`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: longUrl }),

@@ -15,7 +15,7 @@ async function handleGenerateUrl(req, res) {
 
   return res.json({
     id: shortId,
-    shortUrl: `http://localhost:8001/${shortId}`,
+    shortUrl: `${req.protocol}://${req.get("host")}/${shortId}`,
   });
 }
 
