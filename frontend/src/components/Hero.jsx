@@ -23,9 +23,10 @@ function Hero({ onGenerate }) {
       });
 
       const data = await res.json();
+      console.log("Response:", data);
 
-      if (data.id) {
-        onGenerate?.(data.id);
+      if (data.shortUrl) {
+        onGenerate?.(data.shortUrl);
         setLongUrl("");
       }
     } catch (err) {
