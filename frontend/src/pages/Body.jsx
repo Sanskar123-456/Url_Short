@@ -1,22 +1,20 @@
 import { useState } from "react";
 import Hero from "../components/Hero";
 import ShortUrl from "../components/ShortUrl";
+import FeaturesAndUseCases from "../components/FeaturesAndUseCases";
 
 function Body() {
   const [shortUrl, setShortUrl] = useState("");
 
   return (
-    <div
-      className="min-h-screen bg-gray-200 sm:bg-gray-500 md:bg-gray-700 lg:bg-gray-800 
-        dark:bg-gray-900 dark:sm:bg-gray-800 dark:md:bg-gray-950 
-        text-black dark:text-white flex flex-col"
-    >
-
-      {/* Main Content */}
-      <main className="flex-grow flex flex-col items-center justify-center px-4">
-        <Hero onGenerate={(shortUrl) => setShortUrl(shortUrl)} />
+    <div className="min-h-[calc(100vh-4rem)] flex flex-col justify-start items-center px-4 py-8 sm:py-12 bg-gray-100 dark:bg-gray-950 transition-colors">
+      <div className="w-full max-w-4xl flex flex-col items-center justify-center">
+        <Hero onGenerate={(url) => setShortUrl(url)} />
         <ShortUrl shortUrl={shortUrl} />
-      </main>
+      </div>
+
+      {/* Comprehensive Features & Use Cases Section */}
+      <FeaturesAndUseCases />
     </div>
   );
 }
