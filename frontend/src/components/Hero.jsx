@@ -50,7 +50,9 @@ function Hero({ onGenerate }) {
       }
     } catch (err) {
       console.error("Error generating short URL:", err);
-      setErrorMessage(err.message || "Something went wrong while shortening the link.");
+      setErrorMessage(
+        err.message || "Something went wrong while shortening the link.",
+      );
     } finally {
       setLoading(false);
     }
@@ -78,7 +80,8 @@ function Hero({ onGenerate }) {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/60 dark:to-purple-950/60 border border-blue-200 dark:border-blue-800/80 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-5 shadow-sm"
         >
-          <Sparkles size={16} className="text-purple-500 animate-pulse" /> Next-Gen Smart Link Platform
+          <Sparkles size={16} className="text-purple-500 animate-pulse" />{" "}
+          Next-Gen Smart Link Platform
         </motion.div>
 
         {/* 1. Main Heading */}
@@ -86,9 +89,9 @@ function Hero({ onGenerate }) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 drop-shadow-sm max-w-4xl leading-tight"
+          className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 drop-shadow-sm max-w-4xl leading-tight"
         >
-          AI Powered Smart URL Shortener
+          Smart URL Shortener
         </motion.h1>
 
         {/* 2. Text related to URL shortener features & use cases */}
@@ -99,20 +102,53 @@ function Hero({ onGenerate }) {
           className="max-w-3xl mt-4 sm:mt-5 text-gray-600 dark:text-gray-300 space-y-3 px-2"
         >
           <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
-            Transform lengthy, complex, and unreadable URLs into powerful, intelligent, and shareable short links in a single click.
+            Transform lengthy, complex, and unreadable URLs into powerful,
+            intelligent, and shareable short links in a single click.
           </p>
           <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed">
-            Gain complete visibility with <strong className="text-gray-800 dark:text-gray-200">real-time click analytics</strong>, instant redirect speeds, and custom link tracking. Perfect for <span className="text-blue-600 dark:text-blue-400 font-medium">Social Media bios</span>, <span className="text-purple-600 dark:text-purple-400 font-medium">Digital Ad Campaigns</span>, <span className="text-pink-600 dark:text-pink-400 font-medium">SMS & WhatsApp broadcasts</span>, and <span className="text-emerald-600 dark:text-emerald-400 font-medium">Business Marketing</span>.
+            Gain complete visibility with{" "}
+            <strong className="text-gray-800 dark:text-gray-200">
+              real-time click analytics
+            </strong>
+            , instant redirect speeds, and custom link tracking. Perfect for{" "}
+            <span className="text-blue-600 dark:text-blue-400 font-medium">
+              Social Media bios
+            </span>
+            ,{" "}
+            <span className="text-purple-600 dark:text-purple-400 font-medium">
+              Digital Ad Campaigns
+            </span>
+            ,{" "}
+            <span className="text-pink-600 dark:text-pink-400 font-medium">
+              SMS & WhatsApp broadcasts
+            </span>
+            , and{" "}
+            <span className="text-emerald-600 dark:text-emerald-400 font-medium">
+              Business Marketing
+            </span>
+            .
           </p>
         </motion.div>
 
         {/* Feature Highlights Pills with Staggered Scroll Animation */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mt-6 max-w-2xl text-xs sm:text-sm text-gray-700 dark:text-gray-300">
           {[
-            { icon: <Zap size={14} className="text-amber-500" />, label: "Instant Shortening" },
-            { icon: <BarChart2 size={14} className="text-blue-500" />, label: "Real-Time Click Tracking" },
-            { icon: <Shield size={14} className="text-emerald-500" />, label: "Safe & Secure Routing" },
-            { icon: <Smartphone size={14} className="text-purple-500" />, label: "Social & Mobile Ready" },
+            {
+              icon: <Zap size={14} className="text-amber-500" />,
+              label: "Instant Shortening",
+            },
+            {
+              icon: <BarChart2 size={14} className="text-blue-500" />,
+              label: "Real-Time Click Tracking",
+            },
+            {
+              icon: <Shield size={14} className="text-emerald-500" />,
+              label: "Safe & Secure Routing",
+            },
+            {
+              icon: <Smartphone size={14} className="text-purple-500" />,
+              label: "Social & Mobile Ready",
+            },
           ].map((pill, i) => (
             <motion.span
               key={i}
@@ -204,7 +240,11 @@ function Hero({ onGenerate }) {
         >
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md shrink-0 hidden sm:flex">
-              {isAuthenticated ? <UserCheck size={20} /> : <Sparkles size={20} />}
+              {isAuthenticated ? (
+                <UserCheck size={20} />
+              ) : (
+                <Sparkles size={20} />
+              )}
             </div>
             <div>
               <h3 className="text-sm sm:text-base font-bold text-gray-900 dark:text-white">
