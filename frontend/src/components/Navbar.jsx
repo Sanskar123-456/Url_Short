@@ -29,7 +29,7 @@ function Navbar() {
               <Link2 size={22} className="stroke-[2.5]" />
             </div>
             <span className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-              UrlShort
+              SnapLink
             </span>
           </Link>
 
@@ -60,7 +60,9 @@ function Navbar() {
                   <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex items-center justify-center text-xs font-bold uppercase">
                     {user?.name ? user.name[0] : <User size={12} />}
                   </div>
-                  <span className="max-w-[130px] truncate">{user?.name || "User"}</span>
+                  <span className="max-w-[130px] truncate">
+                    {user?.name || "User"}
+                  </span>
                 </div>
                 <button
                   onClick={handleLogout}
@@ -109,7 +111,7 @@ function Navbar() {
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-base font-medium text-blue-600 font-semibold"
+              className="block py-2 text-base text-blue-600 font-semibold"
             >
               Home
             </Link>
@@ -127,7 +129,12 @@ function Navbar() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 py-1 text-sm font-medium text-gray-700 dark:text-gray-300">
                   <User size={16} className="text-blue-500" />
-                  <span>Signed in as <strong className="text-gray-900 dark:text-white">{user?.name}</strong></span>
+                  <span>
+                    Signed in as{" "}
+                    <strong className="text-gray-900 dark:text-white">
+                      {user?.name}
+                    </strong>
+                  </span>
                 </div>
                 <button
                   onClick={() => {
